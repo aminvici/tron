@@ -1,11 +1,15 @@
-FROM tronprotocol/tron-gradle
+FROM eclipse-temurin:11-jre-jammy
 
-RUN set -o errexit -o nounset \
-    && echo "git clone" \
-    && git clone https://github.com/tronprotocol/java-tron.git \
-    && cd java-tron \
-    && gradle build
+ENV JAVA_OPTS="" \
+    TRON_CONFIG=/opt/java-tron/config/config.conf
 
-WORKDIR /java-tron
+WORKDIR /opt/java-tron
 
-EXPOSE 18888
+COPY build/libs/ /opt/java-tron/
+COPY build/resources/main/ /opt/java-tron/config/
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+EXPOSE 18888 50051 8090
+
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]

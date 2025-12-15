@@ -50,7 +50,8 @@ task sourceJar(type: Jar, dependsOn: classes) {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url 'http://repo.spring.io/plugins-release' }
+    maven { url 'https://repo1.maven.org/maven2/' }
+    maven { url 'https://jcenter.bintray.com' }
 }
 def versions = [
         checkstyle: '8.7',
@@ -140,7 +141,6 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-tx', version: '4.2.0.RELEASE'
 
     compile group: 'com.beust', name: 'jcommander', version: '1.72'
-
     compile group: 'junit', name: 'junit', version: '4.12'
 
     compile group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
@@ -166,7 +166,7 @@ dependencies {
     // end google grpc
 
     compile group: 'com.carrotsearch', name: 'java-sizeof', version: '0.0.5'
-
+    
     compile 'org.aspectj:aspectjrt:1.8.13'
     compile 'org.aspectj:aspectjweaver:1.8.13'
     compile 'org.aspectj:aspectjtools:1.8.13'

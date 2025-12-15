@@ -24,6 +24,8 @@ LOG_FILE_PATH="java-tron.log"
 
 CONF_FILE_PATH="./build/resources/main/config.conf"
 
+DB_PATH="output-directory"
+
 PRIVATE_KEY="650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812"
 
 case "${1}" in
