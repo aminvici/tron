@@ -4,7 +4,7 @@
 # Usage: bash work.sh start|stop|restart.
 # Note: modify the paths and private key to your own.
 
-# Auther: haoyouqiang
+# Auther: vici
 # Since: 2018/5/27 
 # Version: 1.0
 
